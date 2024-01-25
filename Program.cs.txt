@@ -1,0 +1,47 @@
+using System; 
+
+
+
+    class Program
+{
+
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Welcome to the selection!");
+        Console.WriteLine("Your task is to decide who is spared from executution today! ");
+
+        string[] participants = new string[] { "BOB", "STORM HEARD", "SPARE MAY", "MR PUNNY" };
+        string[] theDead = new string[10];
+
+        int deathindex = 0;
+
+        foreach (var participant in participants)
+        {
+            Console.WriteLine($"Do you want to execute {participant}? (yes/no)");
+            string input = Console.ReadLine().ToLower();
+
+            if (input == "yes")
+            {
+                theDead[deathindex] = participant;
+                deathindex++;
+                Console.WriteLine($"{participant} has been executed!");
+
+            }
+            else
+            {
+                Console.WriteLine($"{participant} has been spared!");
+
+            }
+        }
+
+        Console.WriteLine("\n The following people are killed.");
+        foreach (var theDeadList in theDead)
+        {
+            Console.WriteLine(theDeadList);
+        }
+
+
+
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
